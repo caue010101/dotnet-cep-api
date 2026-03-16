@@ -168,6 +168,10 @@
               "target": "Package",
               "version": "[2.1.72, )"
             },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.3.9, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[10.0.5, )"
@@ -175,6 +179,10 @@
             "Npgsql": {
               "target": "Package",
               "version": "[10.0.2, )"
+            },
+            "SwashBuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.5, )"
             }
           },
           "imports": [
