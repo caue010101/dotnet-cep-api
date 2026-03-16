@@ -4,10 +4,10 @@ using CepSystem.Domain.Entities;
 namespace CepSystem.Domain.Interfaces
 {
 
-    public interface IAdressRepository
+    public interface IAddressRepository
     {
 
         Task<Address?> GetByZipCodeAsync(string zipCode);
-        Task<bool> AddAsync(Address address);
+        Task AddAsync(Address address);
     }
 }

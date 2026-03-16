@@ -150,6 +150,9 @@
             "projectReferences": {
               "/home/nash/CepSystem/CepSystem.Application/CepSystem.Application.csproj": {
                 "projectPath": "/home/nash/CepSystem/CepSystem.Application/CepSystem.Application.csproj"
+              },
+              "/home/nash/CepSystem/CepSystem.Domain/CepSystem.Domain.csproj": {
+                "projectPath": "/home/nash/CepSystem/CepSystem.Domain/CepSystem.Domain.csproj"
               }
             }
           }
@@ -166,23 +169,15 @@
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[2.1.72, )"
+              "version": "[2.1.35, )"
             },
-            "Microsoft.AspNetCore.Mvc": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[2.3.9, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[8.0.0, )"
             },
             "Npgsql": {
               "target": "Package",
-              "version": "[10.0.2, )"
-            },
-            "SwashBuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[10.1.5, )"
+              "version": "[8.0.3, )"
             }
           },
           "imports": [

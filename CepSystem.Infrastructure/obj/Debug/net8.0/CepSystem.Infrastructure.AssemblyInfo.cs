@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CepSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6256470f7f18cc237f9975409ddfd727a7dcd6c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27a663878a22c728cb9a0cc15f7b8df4c083aee6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CepSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CepSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
