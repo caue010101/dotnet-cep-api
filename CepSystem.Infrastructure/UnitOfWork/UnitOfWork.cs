@@ -2,7 +2,6 @@ using CepSystem.Domain.Interfaces;
 using System.Data;
 using CepSystem.Infrastructure.Repositories;
 
-
 namespace CepSystem.Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
