@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0rIBwG4xG2+2GRg5Bso6OtNiwMDo2ggbTmonv8BHXfZPv7yaD+NYATUrQb7KhACXxQ0Vzhd+q8tPJ5KatcPr1g==",
+  "success": true,
+  "projectFilePath": "/home/nash/CepSystem/CepSystem.Domain/CepSystem.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/nash/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}

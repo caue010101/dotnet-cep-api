@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "CepSystem.Infrastructure/1.0.0": {
+        "dependencies": {
+          "CepSystem.Application": "1.0.0"
+        },
+        "runtime": {
+          "CepSystem.Infrastructure.dll": {}
+        }
+      },
+      "CepSystem.Application/1.0.0": {
+        "dependencies": {
+          "CepSystem.Domain": "1.0.0"
+        },
+        "runtime": {
+          "CepSystem.Application.dll": {}
+        }
+      },
+      "CepSystem.Domain/1.0.0": {
+        "runtime": {
+          "CepSystem.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CepSystem.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CepSystem.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CepSystem.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

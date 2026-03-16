@@ -1,0 +1,5 @@
+/home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.csproj.AssemblyReference.cache
+/home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.GeneratedMSBuildEditorConfig.editorconfig
+/home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.AssemblyInfoInputs.cache
+/home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.AssemblyInfo.cs
+/home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.csproj.CoreCompileInputs.cache

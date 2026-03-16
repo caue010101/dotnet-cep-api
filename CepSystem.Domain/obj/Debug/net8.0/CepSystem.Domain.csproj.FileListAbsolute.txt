@@ -1,0 +1,11 @@
+/home/nash/CepSystem/CepSystem.Domain/bin/Debug/net8.0/CepSystem.Domain.deps.json
+/home/nash/CepSystem/CepSystem.Domain/bin/Debug/net8.0/CepSystem.Domain.dll
+/home/nash/CepSystem/CepSystem.Domain/bin/Debug/net8.0/CepSystem.Domain.pdb
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/CepSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/CepSystem.Domain.AssemblyInfoInputs.cache
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/CepSystem.Domain.AssemblyInfo.cs
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/CepSystem.Domain.csproj.CoreCompileInputs.cache
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/CepSystem.Domain.dll
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/refint/CepSystem.Domain.dll
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/CepSystem.Domain.pdb
+/home/nash/CepSystem/CepSystem.Domain/obj/Debug/net8.0/ref/CepSystem.Domain.dll
