@@ -1,7 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
     <ProjectReference Include="..\CepSystem.Infrastructure\CepSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\CepSystem.Domain\CepSystem.Domain.csproj" />
+    <ProjectReference Include="..\CepSystem.Application\CepSystem.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SwashBuckle.AspNetCore" Version="10.1.5" />
   </ItemGroup>
 
   <PropertyGroup>

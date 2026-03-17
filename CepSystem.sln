@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CepSystem.API", "CepSystem.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CepSystem.API", "CepSystem.API", "{8E77384F-8C21-4FE8-810F-359C1F8759E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minhaApi", "CepSystem.API\minhaApi\minhaApi.csproj", "{B3726335-3998-41AB-A946-C1853B4169C7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CepSystem.Application", "CepSystem.Application\CepSystem.Application.csproj", "{55B529DF-D57B-4FBE-9864-6114A03AF822}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CepSystem.Domain", "CepSystem.Domain\CepSystem.Domain.csproj", "{474482C8-C163-4AA6-B74A-79FEB60C203A}"
@@ -28,10 +26,6 @@ Global
 		{FDED9781-C5B3-420E-BCDD-4025BC2A4802}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDED9781-C5B3-420E-BCDD-4025BC2A4802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDED9781-C5B3-420E-BCDD-4025BC2A4802}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3726335-3998-41AB-A946-C1853B4169C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3726335-3998-41AB-A946-C1853B4169C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3726335-3998-41AB-A946-C1853B4169C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3726335-3998-41AB-A946-C1853B4169C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55B529DF-D57B-4FBE-9864-6114A03AF822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55B529DF-D57B-4FBE-9864-6114A03AF822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55B529DF-D57B-4FBE-9864-6114A03AF822}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +41,5 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FDED9781-C5B3-420E-BCDD-4025BC2A4802} = {8E77384F-8C21-4FE8-810F-359C1F8759E8}
-		{B3726335-3998-41AB-A946-C1853B4169C7} = {8E77384F-8C21-4FE8-810F-359C1F8759E8}
 	EndGlobalSection
 EndGlobal

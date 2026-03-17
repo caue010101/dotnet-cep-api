@@ -1,9 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "mxjPU+6D6NXQGafkk5F8pQoLMUJ6o+LYRP0s5o0MMgQJMehP/dCyyJkXs4y+3m6nEcxO27a6BVyBW6XmiWUVtg==",
+  "dgSpecHash": "8XgGE1movcYbtjPd7hZj8zffbo8X0Omu6biQZakyRCjABIycAjnaZtjiK/VIAkzcE3IjUYXLFeyqLaYl6Kh0PA==",
   "success": true,
   "projectFilePath": "/home/nash/CepSystem/CepSystem.Application/CepSystem.Application.csproj",
   "expectedPackageFiles": [
+    "/home/nash/.nuget/packages/microsoft.extensions.apidescription.server/8.0.0/microsoft.extensions.apidescription.server.8.0.0.nupkg.sha512",
+    "/home/nash/.nuget/packages/microsoft.openapi/2.4.1/microsoft.openapi.2.4.1.nupkg.sha512",
+    "/home/nash/.nuget/packages/swashbuckle.aspnetcore/10.1.5/swashbuckle.aspnetcore.10.1.5.nupkg.sha512",
+    "/home/nash/.nuget/packages/swashbuckle.aspnetcore.swagger/10.1.5/swashbuckle.aspnetcore.swagger.10.1.5.nupkg.sha512",
+    "/home/nash/.nuget/packages/swashbuckle.aspnetcore.swaggergen/10.1.5/swashbuckle.aspnetcore.swaggergen.10.1.5.nupkg.sha512",
+    "/home/nash/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.1.5/swashbuckle.aspnetcore.swaggerui.10.1.5.nupkg.sha512",
+    "/home/nash/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
   ],
   "logs": []

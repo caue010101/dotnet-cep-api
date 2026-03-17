@@ -26,6 +26,12 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "/home/nash/CepSystem/CepSystem.Application/CepSystem.Application.csproj": {
+                "projectPath": "/home/nash/CepSystem/CepSystem.Application/CepSystem.Application.csproj"
+              },
+              "/home/nash/CepSystem/CepSystem.Domain/CepSystem.Domain.csproj": {
+                "projectPath": "/home/nash/CepSystem/CepSystem.Domain/CepSystem.Domain.csproj"
+              },
               "/home/nash/CepSystem/CepSystem.Infrastructure/CepSystem.Infrastructure.csproj": {
                 "projectPath": "/home/nash/CepSystem/CepSystem.Infrastructure/CepSystem.Infrastructure.csproj"
               }
@@ -41,6 +47,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "SwashBuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,6 +71,9 @@
             }
           ],
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -104,6 +119,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "SwashBuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
