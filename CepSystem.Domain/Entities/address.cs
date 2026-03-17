@@ -4,17 +4,18 @@ namespace CepSystem.Domain.Entities
 
     public class Address
     {
-        public string ZipCode { get; private set; }
-        public string Street { get; private set; }
-        public string? Complement { get; private set; }
-        public string? Neighborhood { get; private set; }
-        public string City { get; private set; }
-        public string State { get; private set; }
-        public string? AreaCode { get; private set; }
-        public DateTime CreatedAt { get; private set; }
-        public DateTime UpdatedAt { get; private set; }
+        public string ZipCode { get; init; }
+        public string Street { get; init; }
 
-        private Address() { }
+        public string? Complement { get; init; }
+        public string? Neighborhood { get; init; }
+        public string City { get; init; }
+        public string State { get; init; }
+        public string? AreaCode { get; init; }
+        public DateTime CreatedAt { get; init; }
+        public DateTime UpdatedAt { get; init; }
+
+        public Address() { }
 
         public Address(string zipCode, string street, string? complement, string? neighborhood, string city, string state,
             string? areaCode)
