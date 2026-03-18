@@ -20,7 +20,7 @@ namespace CepSystem.Application.Services
             this._logger = logger;
         }
 
-        public async Task<AddressDto?> GetByZipCodeAsync(string zipCode)
+        public async Task<ResponseAddressDto> GetByZipCodeAsync(string zipCode)
         {
 
             var adress = await _addressRepository.GetByZipCodeAsync(zipCode);
@@ -32,8 +32,8 @@ namespace CepSystem.Application.Services
 
             }
 
-            return new AddressDto(
-              ZipCode: adress.ZipCode,
+            return new ResponseAddressDto(
+
               Street: adress.Street,
               Neighborhood: adress.Neighborhood,
               City: adress.City,
@@ -46,4 +46,5 @@ namespace CepSystem.Application.Services
 
         }
     }
+
 }
