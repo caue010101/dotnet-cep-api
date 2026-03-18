@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 
 
-namespace CepSystem.Infrastructure.ExternalService
+namespace CepSystem.Application.Dtos.ExternalDtos
 {
     public class ViaCepResponse
     {

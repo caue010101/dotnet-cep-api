@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CepSystem.Application\CepSystem.Application.csproj" />
     <ProjectReference Include="..\CepSystem.Domain\CepSystem.Domain.csproj" />
+    <ProjectReference Include="..\CepSystem.Application\CepSystem.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
