@@ -3,21 +3,18 @@ using System.Text.Json.Serialization;
 
 namespace CepSystem.Application.Dtos.ExternalDtos
 {
-    public class ViaCepResponse
-    {
-        [JsonPropertyName("logradouro")]
-        public string? Logradouro { get; set; }
+    public record ViaCepResponse
+    (
+        [property: JsonPropertyName("logradouro")] string? Logradouro,
 
-        [JsonPropertyName("bairro")]
-        public string? Bairro { get; set; }
+        [property: JsonPropertyName("bairro")] string? Bairro,
 
-        [JsonPropertyName("uf")]
-        public string? Uf { get; set; }
+        [property: JsonPropertyName("localidade")] string? Localidade,
 
-        [JsonPropertyName("cep")]
-        public string? Cep { get; set; }
+        [property: JsonPropertyName("ddd")] string? Ddd,
 
-        [JsonPropertyName("error")]
-        public bool Error { get; set; }
-    }
+        [property: JsonPropertyName("uf")] string? Uf,
+
+        [property: JsonPropertyName("erro")] bool Erro
+    );
 }

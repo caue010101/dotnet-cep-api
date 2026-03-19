@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Vqb/TN8wTJzicEhE9eE6IChI52GvqHUBfKT/+wCVULdyJz4mFpS/XFZPoPjwE3FYRHjXQvUoPv7vcUztC09KDA==",
-  "success": false,
+  "dgSpecHash": "wnA7CfklUhAUyE3n7kyJnAS9Km5uLcAaaPT8NKm3qV8z1WyjRTPTpWh+5Y5i8VGYShnePgOOvmQ+gl7SrFW9hA==",
+  "success": true,
   "projectFilePath": "/home/nash/CepSystem/CepSystem.Infrastructure/CepSystem.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/home/nash/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.apidescription.server/8.0.0/microsoft.extensions.apidescription.server.8.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.configuration/10.0.0/microsoft.extensions.configuration.10.0.0.nupkg.sha512",
-    "/home/nash/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/home/nash/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.configuration.binder/10.0.0/microsoft.extensions.configuration.binder.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.0/microsoft.extensions.dependencyinjection.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
@@ -36,28 +36,10 @@
     "/home/nash/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.1.5/swashbuckle.aspnetcore.swaggerui.10.1.5.nupkg.sha512",
     "/home/nash/.nuget/packages/system.diagnostics.diagnosticsource/10.0.0/system.diagnostics.diagnosticsource.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.io.pipelines/10.0.0/system.io.pipelines.10.0.0.nupkg.sha512",
+    "/home/nash/.nuget/packages/system.net.http.json/8.0.0/system.net.http.json.8.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.text.encodings.web/10.0.0/system.text.encodings.web.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.text.json/10.0.0/system.text.json.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.Configuration.Abstractions from 10.0.0 to 8.0.0. Reference the package directly from the project to select a different version. \n CepSystem.Infrastructure -> CepSystem.Application -> Serilog.AspNetCore 10.0.0 -> Serilog.Extensions.Hosting 10.0.0 -> Microsoft.Extensions.Hosting.Abstractions 10.0.0 -> Microsoft.Extensions.Configuration.Abstractions (>= 10.0.0) \n CepSystem.Infrastructure -> Microsoft.Extensions.Configuration.Abstractions (>= 8.0.0)",
-      "libraryId": "Microsoft.Extensions.Configuration.Abstractions",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.Extensions.Configuration.Abstractions from 10.0.0 to 8.0.0. Reference the package directly from the project to select a different version. \n CepSystem.Infrastructure -> CepSystem.Application -> Serilog.AspNetCore 10.0.0 -> Serilog.Settings.Configuration 10.0.0 -> Microsoft.Extensions.Configuration.Binder 10.0.0 -> Microsoft.Extensions.Configuration.Abstractions (>= 10.0.0) \n CepSystem.Infrastructure -> Microsoft.Extensions.Configuration.Abstractions (>= 8.0.0)",
-      "libraryId": "Microsoft.Extensions.Configuration.Abstractions",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

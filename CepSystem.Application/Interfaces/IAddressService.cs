@@ -6,6 +6,5 @@ namespace CepSystem.Application.Interfaces
     public interface IAddressService
     {
         Task<ResponseAddressDto?> GetByZipCodeAsync(string zipCode);
-        Task<AddressDto> AddAsync(CreateZipCodeDto dto);
     }
 }

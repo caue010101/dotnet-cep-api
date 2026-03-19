@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/CepSystem.API.props" />
+</Project>

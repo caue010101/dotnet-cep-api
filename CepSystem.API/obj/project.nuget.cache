@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+XRCN9hdKsdzSsqgb6PnED3coamnl3aLg/GipMUO3kUsmB0//ij/T+WZPzVeApvyEBhyXQmMYWA+ki2z7MWqNg==",
+  "dgSpecHash": "Kdnn/3NwatndjKzuNMwA4wHPRboMrOgqZ/hGPk951M37cmHpbBvgLyDl1qsGnEoQd+0GF2mWHD70kpNBMB2MYg==",
   "success": true,
   "projectFilePath": "/home/nash/CepSystem/CepSystem.API/CepSystem.API.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "/home/nash/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.1.5/swashbuckle.aspnetcore.swaggerui.10.1.5.nupkg.sha512",
     "/home/nash/.nuget/packages/system.diagnostics.diagnosticsource/10.0.0/system.diagnostics.diagnosticsource.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.io.pipelines/10.0.0/system.io.pipelines.10.0.0.nupkg.sha512",
+    "/home/nash/.nuget/packages/system.net.http.json/8.0.0/system.net.http.json.8.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.text.encodings.web/10.0.0/system.text.encodings.web.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.text.json/10.0.0/system.text.json.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
