@@ -1,9 +1,11 @@
 using CepSystem.Infrastructure.Context;
 using CepSystem.Infrastructure.UnitOfWork;
 using CepSystem.Domain.Interfaces;
+using System.Data;
 using CepSystem.Application.Interfaces;
 using CepSystem.Infrastructure.ExternalService;
 using CepSystem.Infrastructure.Repositories;
+using CepSystem.Application.Services;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -25,8 +27,16 @@ try
     builder.Services.AddSwaggerGen();
 
     builder.Services.AddSingleton<DapperContext>();
-    builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
+
+    builder.Services.AddScoped<IDbConnection>(sp =>
+    {
+        var context = sp.GetRequiredService<DapperContext>();
+        return context.CreateConnection();
+    });
+
+    builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
     builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+    builder.Services.AddScoped<IAddressService, AddressService>();
 
 
     builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>

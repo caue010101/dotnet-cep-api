@@ -1,6 +1,5 @@
 using CepSystem.Domain.Interfaces;
 using System.Data;
-using CepSystem.Infrastructure.Repositories;
 
 namespace CepSystem.Infrastructure.UnitOfWork
 {
@@ -8,12 +7,18 @@ namespace CepSystem.Infrastructure.UnitOfWork
     {
 
         private readonly IDbConnection _connection;
-        private IDbTransaction _transaction;
-        private IAddressRepository? _addressRepository;
+        private IDbTransaction? _transaction;
+
+        public IDbTransaction? Transaction => _transaction;
 
         public UnitOfWork(IDbConnection connection)
         {
             _connection = connection;
+
+        }
+
+        public void BeginTransaction()
+        {
 
             if (_connection.State != ConnectionState.Open)
             {
@@ -23,10 +28,7 @@ namespace CepSystem.Infrastructure.UnitOfWork
             _transaction = _connection.BeginTransaction();
         }
 
-        public IAddressRepository addresses =>
-          _addressRepository ??= new AddressRepository(_connection, _transaction);
-
-        public async Task CommitAsync()
+        public void Commit()
         {
 
             try
@@ -36,7 +38,7 @@ namespace CepSystem.Infrastructure.UnitOfWork
             }
             catch
             {
-                _transaction.Rollback();
+                Rollback();
                 throw;
             }
 
@@ -44,8 +46,15 @@ namespace CepSystem.Infrastructure.UnitOfWork
             {
                 _transaction.Dispose();
 
-                _transaction = _connection.BeginTransaction();
+                _transaction = null;
             }
+        }
+
+        public void Rollback()
+        {
+            _transaction?.Rollback();
+            _transaction?.Dispose();
+            _transaction = null;
         }
 
         public void Dispose()

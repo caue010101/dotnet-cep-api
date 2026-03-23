@@ -13,8 +13,6 @@ namespace CepSystem.Application.Dtos.ExternalDtos
 
         [property: JsonPropertyName("ddd")] string? Ddd,
 
-        [property: JsonPropertyName("uf")] string? Uf,
-
-        [property: JsonPropertyName("erro")] bool Erro
+        [property: JsonPropertyName("uf")] string? Uf
     );
 }

@@ -1,13 +1,15 @@
+using System.Data;
+
 
 namespace CepSystem.Domain.Interfaces
 {
 
     public interface IUnitOfWork : IDisposable
     {
-
-        IAddressRepository addresses { get; }
-
-        Task CommitAsync();
+        public IDbTransaction Transaction { get; }
+        void Commit();
+        void BeginTransaction();
+        void Rollback();
     }
 
 }

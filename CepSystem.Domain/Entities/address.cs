@@ -6,8 +6,6 @@ namespace CepSystem.Domain.Entities
     {
         public string ZipCode { get; init; }
         public string Street { get; init; }
-
-        public string? Complement { get; init; }
         public string? Neighborhood { get; init; }
         public string City { get; init; }
         public string State { get; init; }
@@ -17,13 +15,12 @@ namespace CepSystem.Domain.Entities
 
         public Address() { }
 
-        public Address(string zipCode, string street, string? complement, string? neighborhood, string city, string state,
+        public Address(string zipCode, string street, string? neighborhood, string city, string state,
             string? areaCode)
         {
 
             if (string.IsNullOrWhiteSpace(zipCode)) throw new ArgumentException("zipCode is required ");
             if (string.IsNullOrWhiteSpace(street)) throw new ArgumentException("street is required ");
-            if (string.IsNullOrWhiteSpace(complement)) throw new ArgumentException("complement is required ");
             if (string.IsNullOrWhiteSpace(neighborhood)) throw new ArgumentException("neighborhood is required ");
             if (string.IsNullOrWhiteSpace(city)) throw new ArgumentException("city is required ");
             if (string.IsNullOrWhiteSpace(state)) throw new ArgumentException("state is required ");
@@ -32,7 +29,6 @@ namespace CepSystem.Domain.Entities
 
             ZipCode = zipCode.Replace("-", "").Trim();
             Street = street;
-            Complement = complement;
             Neighborhood = neighborhood;
             City = city;
             State = state;

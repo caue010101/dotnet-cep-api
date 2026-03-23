@@ -12,12 +12,13 @@ namespace CepSystem.Infrastructure.Repositories
     {
 
         private readonly IDbConnection _connection;
-        private readonly IDbTransaction _transaction;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AddressRepository(IDbConnection connection, IDbTransaction transaction)
+        public AddressRepository(IDbConnection connection, IUnitOfWork unitOfWork)
         {
             this._connection = connection;
-            this._transaction = transaction;
+            this._unitOfWork = unitOfWork;
+
         }
 
         public async Task<Address?> GetByZipCodeAsync(string zipCode)
@@ -26,30 +27,29 @@ namespace CepSystem.Infrastructure.Repositories
             const string sql = @"SELECT 
                   zip_code AS ZipCode,
                   street AS Street,
-                  complement AS Complement,
                   neighborhood AS Neighborhood,
                   city AS City,
                   state AS State,
                   area_code AS AreaCode,
                   created_at AS CreatedAt,
                   updated_at AS UpdatedAt
-                      FROM address WHERE zip_code = @ZipCode";
+                      FROM addresses WHERE zip_code = @ZipCode";
 
             return await _connection.QueryFirstOrDefaultAsync<Address>(sql, new { ZipCode = zipCode },
-                transaction: _transaction);
+                transaction: _unitOfWork.Transaction);
         }
 
         public async Task AddAsync(Address address)
         {
 
 
-            const string sql = @"INSERT INTO address
-              (zip_code, street, complement, neighborhood, city, state, area_code, created_at, updated_at)
-                VALUES(@ZipCode, @Street, @Complement, @Neighborhood, @City, @State, @AreaCode, @CreatedAt, @UpdatedAt)";
+            const string sql = @"INSERT INTO addresses
+              (zip_code, street, neighborhood, city, state, area_code, created_at, updated_at)
+                VALUES(@ZipCode, @Street,@Neighborhood, @City, @State, @AreaCode, @CreatedAt, @UpdatedAt)";
 
 
             await _connection.ExecuteAsync
-              (sql, address, transaction: _transaction);
+              (sql, address, transaction: _unitOfWork.Transaction);
 
 
         }

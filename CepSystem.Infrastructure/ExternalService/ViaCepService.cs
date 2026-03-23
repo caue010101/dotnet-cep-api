@@ -31,7 +31,13 @@ namespace CepSystem.Infrastructure.ExternalService
 
             var data = JsonSerializer.Deserialize<ViaCepResponse>(jsonString, options);
 
-            return (data == null || data.Erro) ? null : data;
+            if (data == null || string.IsNullOrWhiteSpace(data.Logradouro))
+            {
+
+                return null;
+            }
+
+            return data;
         }
 
     }
