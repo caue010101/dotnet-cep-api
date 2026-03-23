@@ -1,6 +1,8 @@
 using CepSystem.Infrastructure.Context;
 using CepSystem.Infrastructure.UnitOfWork;
 using CepSystem.Domain.Interfaces;
+using CepSystem.Application.Interfaces;
+using CepSystem.Infrastructure.ExternalService;
 using CepSystem.Infrastructure.Repositories;
 using Serilog;
 
@@ -25,6 +27,14 @@ try
     builder.Services.AddSingleton<DapperContext>();
     builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
     builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+
+
+    builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>
+    {
+        var baseUrl = builder.Configuration["ViaCepOptions : BaseUrl"];
+
+        client.BaseAddress = new Uri(baseUrl ?? "https://viacep.com.br/ws/");
+    });
 
 
     var app = builder.Build();
