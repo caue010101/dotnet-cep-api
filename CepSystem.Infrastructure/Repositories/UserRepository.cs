@@ -46,5 +46,14 @@ namespace CepSystem.Infrastructure.Repositories
                 transaction: _unitOfWork.Transaction);
 
         }
+
+        public async Task DeleteAsync(Guid id)
+        {
+
+            const string sql = "DELETE FROM users WHERE id = Id";
+
+            await _connection.ExecuteAsync(sql, new { Id = id },
+                transaction: _unitOfWork.Transaction);
+        }
     }
 }
