@@ -2,7 +2,7 @@
 namespace CepSystem.Domain.Entities
 {
 
-    public class Users
+    public class User
     {
 
         public Guid Id { get; set; }
@@ -10,7 +10,7 @@ namespace CepSystem.Domain.Entities
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
 
-        public Users(Guid id, string name, string email, string passwordHash)
+        public User(Guid id, string name, string email, string passwordHash)
         {
 
             if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name is required ");
