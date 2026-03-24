@@ -26,5 +26,15 @@ namespace CepSystem.Infrastructure.Repositories
             return await _connection.QueryFirstOrDefaultAsync<User>(sql, new { Id = id },
                 transaction: _unitOfWork.Transaction);
         }
+
+        public async Task AddAsync(User user)
+        {
+
+            const string sql = @"INSERT INTO users (id, name, email, password_hash)
+              VALUES (@Id, @Name, @Email, @PasswordHash)";
+
+            await _connection.ExecuteAsync(sql, user,
+                transaction: _unitOfWork.Transaction);
+        }
     }
 }

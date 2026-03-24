@@ -8,6 +8,7 @@ namespace CepSystem.Domain.Interfaces
     {
 
         Task<User?> GetUserByIdAsync(Guid id);
+        Task AddAsync(User user);
 
     }
 }
