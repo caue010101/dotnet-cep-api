@@ -7,7 +7,7 @@ namespace CepSystem.Domain.Interfaces
     public interface IUserRepository
     {
 
-        Task<User> GetUserByIdAsync(Guid id);
+        Task<User?> GetUserByIdAsync(Guid id);
 
     }
 }
