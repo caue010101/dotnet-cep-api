@@ -1,5 +1,5 @@
 
-namespace CepSystem.Application.Dtos.Users
+namespace CepSystem.Application.Dtos
 {
 
     public record CreateUserDto(
