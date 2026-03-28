@@ -76,8 +76,38 @@ namespace CepSystem.Application.Services
                 _logger.LogError(e, "Internal server error while registered user {Email} ");
                 throw;
             }
+        }
 
+        public async Task UpdateUserAsync(UpdateUserDto userDto)
+        {
 
+            var user = await _userRepisitory.GetUserByIdAsync(userDto.Id);
+
+            if (user == null)
+            {
+
+                _logger.LogWarning("User {Email} not found ", userDto.Email);
+                throw new InvalidOperationException($"User {userDto.Email} not found ");
+            }
+
+            user.Name = userDto.Name;
+            user.Email = userDto.Email;
+
+            try
+
+            {
+                _unitOfWork.BeginTransaction();
+                await _userRepisitory.UpdateAsync(user);
+                _unitOfWork.Commit();
+                _logger.LogInformation("User {Email} updated successfully ", userDto.Email);
+
+            }
+            catch (Exception e)
+            {
+                _unitOfWork.Rollback();
+                _logger.LogError(e, "Error updating User {Email}", userDto.Email);
+                throw;
+            }
         }
     }
 }
