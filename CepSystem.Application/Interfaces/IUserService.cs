@@ -7,5 +7,6 @@ namespace CepSystem.Application.Interfaces
     {
 
         Task<ReadUserDto?> GetUserByIdAsync(Guid id);
+        Task<ReadUserDto?> AddUserAsync(CreateUserDto userDto);
     }
 }

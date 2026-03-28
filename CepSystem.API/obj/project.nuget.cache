@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9zOE2hquWGUW2kJB0kKxBLGRDSoh26LrlZLUv0WATdMo7U3ny9SWQHIIVPy8N0VL6VwZj8+rmKYWvACQyozWHQ==",
+  "dgSpecHash": "b6J8w1xYzoGisGvM3CIyEqe7sYsKO5B8ZVWTvZf7htMna48iBRQWwqvicaHOSpGLL3lfzisoU2bPO1HEhOhvUw==",
   "success": true,
   "projectFilePath": "/home/nash/CepSystem/CepSystem.API/CepSystem.API.csproj",
   "expectedPackageFiles": [
+    "/home/nash/.nuget/packages/bcrypt.net-next/4.1.0/bcrypt.net-next.4.1.0.nupkg.sha512",
     "/home/nash/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.apidescription.server/8.0.0/microsoft.extensions.apidescription.server.8.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.configuration/10.0.0/microsoft.extensions.configuration.10.0.0.nupkg.sha512",

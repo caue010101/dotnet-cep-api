@@ -22,7 +22,7 @@ namespace CepSystem.Application.Services
             this._unitOfWork = unitOfWork;
         }
 
-        public async Task<ResponseAddressDto?> GetByZipCodeAsync(string zipCode)
+        public async Task<ResponseAddressDto> GetByZipCodeAsync(string zipCode)
         {
 
             var address = await _addressRepository.GetByZipCodeAsync(zipCode);
@@ -68,6 +68,7 @@ namespace CepSystem.Application.Services
 
                 _unitOfWork.BeginTransaction();
 
+
                 await _addressRepository.AddAsync(newAddres);
 
                 _unitOfWork.Commit();
@@ -79,6 +80,7 @@ namespace CepSystem.Application.Services
             {
                 _unitOfWork.Rollback();
                 _logger.LogError(e, "Failed persist {ZipCode} in database", zipCode);
+                throw;
             }
 
             return new ResponseAddressDto(

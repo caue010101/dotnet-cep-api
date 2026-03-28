@@ -10,6 +10,8 @@ namespace CepSystem.Domain.Entities
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
 
+        public User() { }
+
         public User(Guid id, string name, string email, string passwordHash)
         {
 

@@ -65,3 +65,4 @@
 /home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.pdb
 /home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.genruntimeconfig.cache
 /home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/ref/CepSystem.API.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/BCrypt.Net-Next.dll

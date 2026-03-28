@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CepSystem.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ba8a9d2aeaa6bcc28d62de9685edf39a87e6c82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5469adcf26a6db040cbabd8f251fca5d344f343")]
 [assembly: System.Reflection.AssemblyProductAttribute("CepSystem.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CepSystem.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
