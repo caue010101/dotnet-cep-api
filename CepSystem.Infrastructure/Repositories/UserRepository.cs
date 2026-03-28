@@ -40,7 +40,8 @@ namespace CepSystem.Infrastructure.Repositories
         public async Task UpdateAsync(User user)
         {
 
-            const string sql = @"UPDATE users SET name = @Name, email = @Email";
+            const string sql = @"UPDATE users SET name = @Name, email = @Email 
+              WHERE id = @Id";
 
             await _connection.ExecuteAsync(sql, user,
                 transaction: _unitOfWork.Transaction);

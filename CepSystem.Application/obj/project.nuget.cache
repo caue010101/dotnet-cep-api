@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BMXzm0mDkWseeq1eAc72Ca/F+AY9gOW/Nw5VBFVrM1Q6iPUP3M4JFF6OciKS5SEpjM5xRTNIRbIabcR1co3aiA==",
+  "dgSpecHash": "yllu7W7A2ZsOLFfeIeq8CfkoK/93CwtBYvK4qQ5sARv8W/oJkDe1T/qj33y8BcLv0ozfw8C367hoBMJ5Oebn7w==",
   "success": true,
   "projectFilePath": "/home/nash/CepSystem/CepSystem.Application/CepSystem.Application.csproj",
   "expectedPackageFiles": [
@@ -36,7 +36,7 @@
     "/home/nash/.nuget/packages/system.io.pipelines/10.0.0/system.io.pipelines.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.text.encodings.web/10.0.0/system.text.encodings.web.10.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/system.text.json/10.0.0/system.text.json.10.0.0.nupkg.sha512",
-    "/home/nash/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
+    "/home/nash/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
   ],
   "logs": []
 }

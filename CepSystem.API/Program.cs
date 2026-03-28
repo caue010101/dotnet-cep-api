@@ -37,6 +37,7 @@ try
     builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
     builder.Services.AddScoped<IAddressRepository, AddressRepository>();
     builder.Services.AddScoped<IAddressService, AddressService>();
+    builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
     builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>
