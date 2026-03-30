@@ -41,6 +41,26 @@ namespace CepSystem.Application.Services
 
         }
 
+        public async Task<ReadUserDto?> GetUserByEmailAsync(string email)
+        {
+
+            var user = await _userRepisitory.GetUserByEmailAsync(email);
+
+            if (user == null)
+            {
+
+                _logger.LogWarning("User not found ");
+                return null;
+            }
+
+            return new ReadUserDto(
+
+              Id: user.Id,
+              Name: user.Name,
+              Email: user.Email
+            );
+        }
+
         public async Task<ReadUserDto?> AddUserAsync(CreateUserDto userDto)
         {
 

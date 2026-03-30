@@ -27,6 +27,15 @@ namespace CepSystem.Infrastructure.Repositories
                 transaction: _unitOfWork.Transaction);
         }
 
+        public async Task<User?> GetUserByEmailAsync(string email)
+        {
+
+            const string sql = @"SELECT * FROM users WHERE email = @email";
+
+            return await _connection.QueryFirstOrDefaultAsync<User>(sql, new { Email = email },
+                transaction: _unitOfWork.Transaction);
+        }
+
         public async Task AddAsync(User user)
         {
 
