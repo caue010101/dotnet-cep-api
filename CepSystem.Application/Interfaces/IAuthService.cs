@@ -6,6 +6,6 @@ namespace CepSystem.Application.Interfaces
     public interface IAuthService
     {
 
-        Task AuthUserAsync(LoginDto dto);
+        Task<string?> AuthUserAsync(LoginDto dto);
     }
 }

@@ -41,7 +41,7 @@ namespace CepSystem.Application.Services
 
         }
 
-        public async Task<ReadUserDto?> GetUserByEmailAsync(string email)
+        public async Task<User?> GetUserByEmailAsync(string email)
         {
 
             var user = await _userRepisitory.GetUserByEmailAsync(email);
@@ -53,12 +53,7 @@ namespace CepSystem.Application.Services
                 return null;
             }
 
-            return new ReadUserDto(
-
-              Id: user.Id,
-              Name: user.Name,
-              Email: user.Email
-            );
+            return user;
         }
 
         public async Task<ReadUserDto?> AddUserAsync(CreateUserDto userDto)

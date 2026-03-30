@@ -1,4 +1,5 @@
 using CepSystem.Application.Dtos;
+using CepSystem.Domain.Entities;
 
 namespace CepSystem.Application.Interfaces
 {
@@ -7,7 +8,7 @@ namespace CepSystem.Application.Interfaces
     {
 
         Task<ReadUserDto?> GetUserByIdAsync(Guid id);
-        Task<ReadUserDto?> GetUserByEmailAsync(string email);
+        Task<User?> GetUserByEmailAsync(string email);
         Task<ReadUserDto?> AddUserAsync(CreateUserDto userDto);
         Task<bool> UpdateUserAsync(UpdateUserDto userDto);
         Task<bool> DeleteUserAsync(Guid id);
