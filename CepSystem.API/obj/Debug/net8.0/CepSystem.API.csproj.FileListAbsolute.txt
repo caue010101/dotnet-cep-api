@@ -66,3 +66,11 @@
 /home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/CepSystem.API.genruntimeconfig.cache
 /home/nash/CepSystem/CepSystem.API/obj/Debug/net8.0/ref/CepSystem.API.dll
 /home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

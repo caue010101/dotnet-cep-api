@@ -21,7 +21,14 @@ namespace CepSystem.Infrastructure.Repositories
         public async Task<User?> GetUserByIdAsync(Guid id)
         {
 
-            const string sql = @"SELECT * FROM users WHERE id = @Id";
+            const string sql = @"
+                          SELECT 
+                          id AS Id,
+                          name AS Name,
+                          email AS Email,
+                          password_hash AS PasswordHash
+                           FROM users
+                           WHERE id = @Id";
 
             return await _connection.QueryFirstOrDefaultAsync<User>(sql, new { Id = id },
                 transaction: _unitOfWork.Transaction);
@@ -30,7 +37,14 @@ namespace CepSystem.Infrastructure.Repositories
         public async Task<User?> GetUserByEmailAsync(string email)
         {
 
-            const string sql = @"SELECT * FROM users WHERE email = @email";
+            const string sql = @"
+                      SELECT
+                      id AS Id,
+                      name AS Name,
+                      email AS Email,
+                      password_hash AS PasswordHash
+                        FROM users
+                        WHERE email = @Email";
 
             return await _connection.QueryFirstOrDefaultAsync<User>(sql, new { Email = email },
                 transaction: _unitOfWork.Transaction);

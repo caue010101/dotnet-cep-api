@@ -48,6 +48,7 @@ try
     builder.Services.AddScoped<IUserRepository, UserRepository>();
     builder.Services.AddScoped<IUserService, UserService>();
     builder.Services.AddScoped<IJwtService, JwtService>();
+    builder.Services.AddScoped<IAuthService, AuthService>();
 
 
     builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -69,6 +70,8 @@ try
           };
       });
 
+    builder.Services.AddAuthorization();
+
 
     builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>
     {
@@ -76,7 +79,6 @@ try
 
         client.BaseAddress = new Uri(baseUrl ?? "https://viacep.com.br/ws/");
     });
-
 
     var app = builder.Build();
 
@@ -86,7 +88,8 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
-
+    app.UseAuthentication();
+    app.UseAuthorization();
     app.MapControllers();
 
     app.Run();

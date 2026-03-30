@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using CepSystem.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CepSystem.API.Controllers
 {
@@ -18,6 +19,7 @@ namespace CepSystem.API.Controllers
             this._addressService = addressService;
         }
 
+        [Authorize]
         [HttpGet("{zipCode}")]
         public async Task<IActionResult> GetAddressByZipCodeAsync([FromRoute] string zipCode)
         {

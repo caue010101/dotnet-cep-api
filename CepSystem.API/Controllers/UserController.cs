@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using CepSystem.Application.Interfaces;
 using CepSystem.Application.Dtos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CepSystem.API.Controllers
 {
@@ -28,7 +29,7 @@ namespace CepSystem.API.Controllers
                 return NotFound(new { message = "User not found " });
             }
 
-            return Ok(user);
+            return CreatedAtAction(nameof(GetUserByIdAsync), new { id = user.Id }, user);
         }
 
         [HttpPost]
@@ -45,6 +46,7 @@ namespace CepSystem.API.Controllers
             return Ok(user);
         }
 
+        [Authorize]
         [HttpPut]
 
         public async Task<IActionResult> UpdateUserAsync([FromBody] UpdateUserDto userDto)
@@ -60,6 +62,7 @@ namespace CepSystem.API.Controllers
             return Ok(new { message = "User updated successfuly" });
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
 
         public async Task<IActionResult> DeleteUserAsync([FromRoute] Guid id)
