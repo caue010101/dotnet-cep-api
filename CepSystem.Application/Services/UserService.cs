@@ -3,7 +3,7 @@ using CepSystem.Domain.Interfaces;
 using CepSystem.Application.Dtos;
 using CepSystem.Domain.Entities;
 using Microsoft.Extensions.Logging;
-using BCrypt.Net;
+using System.Data.Common;
 
 namespace CepSystem.Application.Services
 {
@@ -56,6 +56,7 @@ namespace CepSystem.Application.Services
 
             try
             {
+                _unitOfWork.BeginTransaction();
                 await _userRepisitory.AddAsync(userModel);
                 _unitOfWork.Commit();
 
@@ -70,6 +71,13 @@ namespace CepSystem.Application.Services
 
             }
 
+            catch (DbException ex) when (ex.Message.Contains("duplicate key") || ex.Message.Contains("UNIQUE"))
+            {
+                _unitOfWork.Rollback();
+                _logger.LogWarning(ex, "Duplicate email attempt {Email}", userDto.Email);
+                throw;
+            }
+
             catch (Exception e)
             {
                 _unitOfWork.Rollback();
@@ -78,7 +86,7 @@ namespace CepSystem.Application.Services
             }
         }
 
-        public async Task UpdateUserAsync(UpdateUserDto userDto)
+        public async Task<bool> UpdateUserAsync(UpdateUserDto userDto)
         {
 
             var user = await _userRepisitory.GetUserByIdAsync(userDto.Id);
@@ -100,13 +108,45 @@ namespace CepSystem.Application.Services
                 await _userRepisitory.UpdateAsync(user);
                 _unitOfWork.Commit();
                 _logger.LogInformation("User {Email} updated successfully ", userDto.Email);
+                return true;
 
             }
             catch (Exception e)
             {
                 _unitOfWork.Rollback();
                 _logger.LogError(e, "Error updating User {Email}", userDto.Email);
-                throw;
+                return false;
+
+            }
+
+        }
+
+        public async Task<bool> DeleteUserAsync(Guid id)
+        {
+
+            var user = await _userRepisitory.GetUserByIdAsync(id);
+
+            if (user == null)
+            {
+                _logger.LogWarning("User {Id} not found ", id);
+                return false;
+
+            }
+
+            try
+            {
+                _unitOfWork.BeginTransaction();
+
+                await _userRepisitory.DeleteAsync(id);
+                _unitOfWork.Commit();
+                _logger.LogInformation("User {Id} deleted successfully ", user.Id);
+                return true;
+            }
+            catch (Exception e)
+            {
+                _unitOfWork.Rollback();
+                _logger.LogError(e, "Error removing User {Id}", id);
+                return false;
             }
         }
     }

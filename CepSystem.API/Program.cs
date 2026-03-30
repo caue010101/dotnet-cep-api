@@ -38,6 +38,7 @@ try
     builder.Services.AddScoped<IAddressRepository, AddressRepository>();
     builder.Services.AddScoped<IAddressService, AddressService>();
     builder.Services.AddScoped<IUserRepository, UserRepository>();
+    builder.Services.AddScoped<IUserService, UserService>();
 
 
     builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>
