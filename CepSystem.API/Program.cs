@@ -2,18 +2,26 @@ using CepSystem.Infrastructure.Context;
 using CepSystem.Infrastructure.UnitOfWork;
 using CepSystem.Domain.Interfaces;
 using System.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using CepSystem.Infrastructure.Services;
 using CepSystem.Application.Interfaces;
 using CepSystem.Infrastructure.ExternalService;
 using CepSystem.Infrastructure.Repositories;
 using CepSystem.Application.Services;
 using Serilog;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+
+
 
 Log.Logger = new LoggerConfiguration()
   .MinimumLevel.Information()
   .WriteTo.Console()
   .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
   .CreateLogger();
-
 
 try
 {
@@ -39,11 +47,32 @@ try
     builder.Services.AddScoped<IAddressService, AddressService>();
     builder.Services.AddScoped<IUserRepository, UserRepository>();
     builder.Services.AddScoped<IUserService, UserService>();
+    builder.Services.AddScoped<IJwtService, JwtService>();
+
+
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+      .AddJwtBearer(options =>
+      {
+          options.TokenValidationParameters = new TokenValidationParameters
+          {
+              ValidateIssuer = true,
+              ValidateAudience = true,
+              ValidateIssuerSigningKey = true,
+              ValidateLifetime = true,
+
+
+              ValidIssuer = builder.Configuration["Jwt:Issuer"],
+              ValidAudience = builder.Configuration["Jwt:Audience"],
+
+              IssuerSigningKey = new SymmetricSecurityKey(
+                  Encoding.ASCII.GetBytes(builder.Configuration["Jwt:SecretKey"]!))
+          };
+      });
 
 
     builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>
     {
-        var baseUrl = builder.Configuration["ViaCepOptions : BaseUrl"];
+        var baseUrl = builder.Configuration["ViaCepOptions:BaseUrl"];
 
         client.BaseAddress = new Uri(baseUrl ?? "https://viacep.com.br/ws/");
     });
