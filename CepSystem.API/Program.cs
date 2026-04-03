@@ -10,10 +10,8 @@ using CepSystem.Infrastructure.ExternalService;
 using CepSystem.Infrastructure.Repositories;
 using CepSystem.Application.Services;
 using Serilog;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration;
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using System.Threading.RateLimiting;
 
 
 
@@ -80,7 +78,57 @@ try
         client.BaseAddress = new Uri(baseUrl ?? "https://viacep.com.br/ws/");
     });
 
+
+
+    builder.Services.AddRateLimiter(options =>
+    {
+        options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(
+            httpContext => RateLimitPartition.GetFixedWindowLimiter(
+               partitionKey: httpContext.User.Identity?.Name ?? httpContext.Request.Headers.Host.ToString(),
+               factory: partition => new FixedWindowRateLimiterOptions
+               {
+                   AutoReplenishment = true,
+                   PermitLimit = 60,
+                   QueueLimit = 0,
+                   Window = TimeSpan.FromSeconds(1)
+               }
+            )
+        );
+
+        options.AddPolicy("login", httpContext =>
+            RateLimitPartition.GetFixedWindowLimiter(
+                partitionKey: httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknow",
+                factory: partition => new FixedWindowRateLimiterOptions
+                {
+                    AutoReplenishment = true,
+                    PermitLimit = 5,
+                    QueueLimit = 0,
+                    Window = TimeSpan.FromSeconds(60)
+                }
+            )
+        );
+
+        options.AddPolicy("register", httpContext =>
+            RateLimitPartition.GetFixedWindowLimiter(
+              partitionKey: httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknow",
+              factory: partition => new FixedWindowRateLimiterOptions
+              {
+                  AutoReplenishment = true,
+                  PermitLimit = 3,
+                  QueueLimit = 0,
+                  Window = TimeSpan.FromSeconds(60)
+              }
+            )
+        );
+
+        options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    });
+
+
+
     var app = builder.Build();
+
+    app.UseRateLimiter();
 
     if (app.Environment.IsDevelopment())
     {

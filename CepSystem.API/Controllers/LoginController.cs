@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using CepSystem.Application.Interfaces;
 using CepSystem.Application.Dtos.Auth;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace CepSystem.API.Controllers
 {
@@ -19,6 +20,7 @@ namespace CepSystem.API.Controllers
         }
 
         [HttpPost]
+        [EnableRateLimiting("login")]
 
         public async Task<IActionResult> LoginAuth([FromBody] LoginDto dto)
         {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using CepSystem.Application.Interfaces;
 using CepSystem.Application.Dtos;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace CepSystem.API.Controllers
 {
@@ -33,6 +34,8 @@ namespace CepSystem.API.Controllers
         }
 
         [HttpPost]
+        [EnableRateLimiting("register")]
+
         public async Task<IActionResult> AddUserAsync(CreateUserDto userDto)
         {
 
