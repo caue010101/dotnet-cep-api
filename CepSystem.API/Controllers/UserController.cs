@@ -3,6 +3,7 @@ using CepSystem.Application.Interfaces;
 using CepSystem.Application.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.RateLimiting;
+using System.Security.Claims;
 
 namespace CepSystem.API.Controllers
 {
@@ -19,18 +20,21 @@ namespace CepSystem.API.Controllers
             this._userService = userService;
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserByIdAsync([FromRoute] Guid id)
+        [HttpGet("me")]
+        public async Task<IActionResult> GetMyProfileAsync()
         {
 
-            var user = await _userService.GetUserByIdAsync(id);
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId = Guid.Parse(userIdClaim);
+
+            var user = await _userService.GetUserByIdAsync(userId);
 
             if (user == null)
             {
                 return NotFound(new { message = "User not found " });
             }
 
-            return CreatedAtAction(nameof(GetUserByIdAsync), new { id = user.Id }, user);
+            return Ok(user);
         }
 
         [HttpPost]
@@ -66,12 +70,16 @@ namespace CepSystem.API.Controllers
         }
 
         [Authorize]
-        [HttpDelete("{id}")]
+        [HttpDelete]
 
-        public async Task<IActionResult> DeleteUserAsync([FromRoute] Guid id)
+        public async Task<IActionResult> DeleteUserAsync()
         {
 
-            var user = await _userService.DeleteUserAsync(id);
+            var userClaimId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            var userId = Guid.Parse(userClaimId);
+
+            var user = await _userService.DeleteUserAsync(userId);
 
             if (user == false)
             {
