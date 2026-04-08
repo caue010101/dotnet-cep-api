@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "9bmh1zrTV9b2IY4DwMC4Sk9YJwjHmqxQOvfDvn29lj4ZRoGFOfcxjoIKksNYs1HQOVHVnKhHTrnThgWfJioHzw==",
+  "dgSpecHash": "taAG1xYXTW4/cTWZU/yLsrnTcIAF1kTs15oH4wrMJRQ9canoS+7Ak3UaBdFbSzf/AxU+46fgw8oH0lWTLcnM7w==",
   "success": true,
   "projectFilePath": "/home/nash/CepSystem/CepSystem.API/CepSystem.API.csproj",
   "expectedPackageFiles": [
     "/home/nash/.nuget/packages/bcrypt.net-next/4.1.0/bcrypt.net-next.4.1.0.nupkg.sha512",
     "/home/nash/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512",
+    "/home/nash/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
+    "/home/nash/.nuget/packages/fluentvalidation.aspnetcore/11.3.1/fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "/home/nash/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.11.0/fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.0/microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.apidescription.server/8.0.0/microsoft.extensions.apidescription.server.8.0.0.nupkg.sha512",
     "/home/nash/.nuget/packages/microsoft.extensions.configuration/10.0.0/microsoft.extensions.configuration.10.0.0.nupkg.sha512",

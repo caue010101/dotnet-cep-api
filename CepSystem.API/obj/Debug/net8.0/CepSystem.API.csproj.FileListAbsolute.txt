@@ -74,3 +74,6 @@
 /home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/FluentValidation.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/home/nash/CepSystem/CepSystem.API/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
